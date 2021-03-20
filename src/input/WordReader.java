@@ -19,18 +19,18 @@ public class WordReader implements DocumentReader
 	{
 		XWPFDocument document = null;
 		FileInputStream fileInputStream = null;
+		XWPFWordExtractor extractor=null;
 		List<String> list=new ArrayList<String>();
 		try 
 		{			//GET THE PATH AUTOMA...
 			File fileToBeRead = new File("C:\\Users\\johnprif\\Desktop\\data2.docx");
 			fileInputStream = new FileInputStream(fileToBeRead);
 			document = new XWPFDocument(fileInputStream);
-			XWPFWordExtractor extractor = new XWPFWordExtractor(document); 
+			extractor = new XWPFWordExtractor(document); 
 			System.out.println("The Contents of the Word File are ::");
 			System.out.println("--------------------------------------");
 			System.out.println(extractor.getText());
 			list.add(extractor.getText());
-			
 		} catch (Exception e) 
 		{
 			System.out.println("We had an error while reading the Word Doc");
@@ -38,18 +38,22 @@ public class WordReader implements DocumentReader
 		{
 			try 
 			{
-				if (document != null) 
+				if (document!=null) 
 				{
 					document.close();
 				}
-				if (fileInputStream != null) 
+				if (fileInputStream!=null) 
 				{
 					fileInputStream.close();
+				}
+				if(extractor!=null)
+				{
+					extractor.close();
 				}
 			} catch (Exception ex) 
 			{
 			}
 		}
-		return null;
+		return list;
 	}
 }
