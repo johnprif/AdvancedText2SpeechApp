@@ -1,6 +1,6 @@
 package commands;
 
-public class CommandsFactory 
+public class CommandsFactory
 {
 	public CommandsFactory()
 	{

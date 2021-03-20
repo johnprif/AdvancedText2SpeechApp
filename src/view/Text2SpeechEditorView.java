@@ -1,5 +1,6 @@
 package view;
 
-public class Text2SpeechEditorView {
+public class Text2SpeechEditorView 
+{
 
 }
