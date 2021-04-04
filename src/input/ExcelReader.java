@@ -19,12 +19,12 @@ public class ExcelReader implements DocumentReader
 		
 	}
 	
-	public List<String> read()
+	public ArrayList<String> read()
 	{
 		XSSFWorkbook workbook=null;
 		FileInputStream file=null;
 		XSSFSheet sheet=null;
-		List<String> list=new ArrayList<String>();
+		ArrayList<String> list=new ArrayList<String>();
 		try
 	      {
 	          file = new FileInputStream(new File("C:\\Users\\johnprif\\Desktop\\example.xlsx"));

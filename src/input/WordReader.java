@@ -15,12 +15,12 @@ public class WordReader implements DocumentReader
 		
 	}
 	
-	public List<String> read()
+	public ArrayList<String> read()
 	{
 		XWPFDocument document = null;
 		FileInputStream fileInputStream = null;
 		XWPFWordExtractor extractor=null;
-		List<String> list=new ArrayList<String>();
+		ArrayList<String> list=new ArrayList<String>();
 		try 
 		{			//GET THE PATH AUTOMA...
 			File fileToBeRead = new File("C:\\Users\\johnprif\\Desktop\\data2.docx");

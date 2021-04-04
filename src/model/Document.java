@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
+import input.DocumentReader;
 import input.DocumentReaderFactory;
 
 public class Document 
@@ -15,7 +16,7 @@ public class Document
 	
 	public Document()
 	{
-		
+		contents=new ArrayList<String>();
 	}
 	
 	public void setAudioManager(TTSFacade ttsssssss)

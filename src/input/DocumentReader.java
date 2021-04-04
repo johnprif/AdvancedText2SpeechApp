@@ -1,8 +1,9 @@
 package input;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface DocumentReader 
 {
-	public List<String> read();
+	public ArrayList<String> read();
 }

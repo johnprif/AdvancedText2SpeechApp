@@ -1,5 +1,6 @@
 package input;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -12,7 +13,7 @@ public class ReaderDecorator implements DocumentReader
 	}
 	
 	//abstract
-	public List<String> read()
+	public ArrayList<String> read()
 	{
 		return null;
 	}
