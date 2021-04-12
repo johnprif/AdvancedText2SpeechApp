@@ -1,4 +1,5 @@
 package model;
+import input.*;
 
 import java.util.ArrayList;
 
@@ -16,27 +17,34 @@ public class Document
 	
 	public Document()
 	{
-		contents=new ArrayList<String>();
+		contents = new ArrayList<String>();
+		audioManager = new TTSFacade();
+		//documentReader = new DocumentReader();
+		//docReaderFactory = new DocumentReaderFactory();
+		documentWriter = new DocumentWriter();
+		docWriterFactory = new DocumentWriterFactory();
 	}
 	
-	public void setAudioManager(TTSFacade ttsssssss)
+	public void setAudioManager(TTSFacade ttss)
 	{
-		
+		audioManager = ttss;
 	}
 	
 	public void setDocReaderFactory(DocumentReaderFactory doc)
 	{
-		
+		docReaderFactory = doc;
 	}
 	
 	public void setDocWriterFactory(DocumentWriterFactory doc)
 	{
-		
+		docWriterFactory = doc;
 	}
-	
-	public void open(String a, String b, String c)
+
+	public void open(String fileName, String path, String ifEncoded)
 	{
 		
+	//	String extension = fileName.contains("Java8");
+	//	DocumentReaderFactory doc = new DocumentReaderFactory("Excel", String ifDecoded);
 	}
 	
 	public void playContents()

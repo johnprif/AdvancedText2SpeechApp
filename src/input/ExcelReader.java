@@ -14,9 +14,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 //import statements
 public class ExcelReader implements DocumentReader
 {
-	public ExcelReader()
+	private String fileNameWithPath; 
+	public ExcelReader(String fileNameWithPath)
 	{
-		
+		this.fileNameWithPath=fileNameWithPath;
 	}
 	
 	public ArrayList<String> read()
@@ -27,7 +28,7 @@ public class ExcelReader implements DocumentReader
 		ArrayList<String> list=new ArrayList<String>();
 		try
 	      {
-	          file = new FileInputStream(new File("C:\\Users\\johnprif\\Desktop\\example.xlsx"));
+	          file = new FileInputStream(new File(fileNameWithPath));
 
 	          //Create Workbook instance holding reference to .xlsx file
 	          workbook = new XSSFWorkbook(file);

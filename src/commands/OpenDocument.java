@@ -6,6 +6,8 @@ import model.*;
 
 public class OpenDocument implements ActionListener
 {
+	private Document doc;
+	private ReplayManager rep;
 	public OpenDocument()
 	{
 		
@@ -13,14 +15,16 @@ public class OpenDocument implements ActionListener
 	
 	public void setDocument(Document doc)
 	{
-		
+		this.doc = doc;
 	}
 	
 	public void setReplayManager(ReplayManager rep)
 	{
+		this.rep = rep;
 	}
 	
 	public void actionPerformed(ActionEvent eve)
 	{
+		
 	}
 }

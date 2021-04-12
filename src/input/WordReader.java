@@ -10,9 +10,10 @@ import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
 public class WordReader implements DocumentReader
 {
-	public WordReader()
+	private String fileNameWithPath; 
+	public WordReader(String fileNameWithPath)
 	{
-		
+		this.fileNameWithPath=fileNameWithPath;
 	}
 	
 	public ArrayList<String> read()
@@ -23,7 +24,7 @@ public class WordReader implements DocumentReader
 		ArrayList<String> list=new ArrayList<String>();
 		try 
 		{			//GET THE PATH AUTOMA...
-			File fileToBeRead = new File("C:\\Users\\johnprif\\Desktop\\data2.docx");
+			File fileToBeRead = new File(fileNameWithPath);
 			fileInputStream = new FileInputStream(fileToBeRead);
 			document = new XWPFDocument(fileInputStream);
 			extractor = new XWPFWordExtractor(document); 
