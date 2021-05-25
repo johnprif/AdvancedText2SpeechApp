@@ -1,28 +1,28 @@
 package model;
-import input.*;
-
 import java.util.ArrayList;
-
-import input.DocumentReader;
 import input.DocumentReaderFactory;
 
 public class Document 
 {
 	private ArrayList<String> contents;
 	private TTSFacade audioManager;
-	private DocumentReader documentReader;
 	private DocumentReaderFactory docReaderFactory;
-	private DocumentWriter documentWriter;
-	private DocumentWriterFactory docWriterFactory;	
+	private String fileNameWithPath;
 	
 	public Document()
 	{
-		contents = new ArrayList<String>();
 		audioManager = new TTSFacade();
-		//documentReader = new DocumentReader();
-		//docReaderFactory = new DocumentReaderFactory();
-		documentWriter = new DocumentWriter();
-		docWriterFactory = new DocumentWriterFactory();
+	}
+	
+	public void setFileNameWithPath(String fileNameWithPath)
+	{
+		this.fileNameWithPath = fileNameWithPath;
+	}
+	
+	public ArrayList<String> getContent()
+	{
+		contents = new ArrayList<String>(docReaderFactory.getList());
+		return contents;
 	}
 	
 	public void setAudioManager(TTSFacade ttss)
@@ -34,32 +34,21 @@ public class Document
 	{
 		docReaderFactory = doc;
 	}
-	
-	public void setDocWriterFactory(DocumentWriterFactory doc)
-	{
-		docWriterFactory = doc;
-	}
 
-	public void open(String fileName, String path, String ifEncoded)
+	public void open(String fileName)
 	{
 		
-	//	String extension = fileName.contains("Java8");
-	//	DocumentReaderFactory doc = new DocumentReaderFactory("Excel", String ifDecoded);
-	}
-	
-	public void playContents()
-	{
-		
-	}
-	
-	public void playLine(int x)
-	{
-		
-	}
-	
-	public void save(String a, String b, String c)
-	{
-		
+		if(fileName.contains("docx"))
+		{
+			docReaderFactory = new DocumentReaderFactory("docx", fileNameWithPath);
+		}else if(fileName.contains("xlsx"))
+		{
+			docReaderFactory = new DocumentReaderFactory("xlsx", fileNameWithPath);
+		}
+		else //other files include .doc and .xls
+		{
+			docReaderFactory = new DocumentReaderFactory("other", fileNameWithPath);
+		}
 	}
 }
 

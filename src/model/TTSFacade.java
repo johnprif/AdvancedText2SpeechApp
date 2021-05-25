@@ -1,37 +1,38 @@
-//https://www.tutorialsfield.com/java-text-to-speech/
 package model;
 
 import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
 
-public class TTSFacade 
+public class TTSFacade// implements Runnable
 {
-	private VoiceManager vm;
 	private Voice voice;
+	private VoiceManager freeVM;
 	
-	public TTSFacade(/*TTSFacade kati*/)
+	public TTSFacade()
 	{
-		//this.vm=kati;
-		voice = VoiceManager.getInstance().getVoice("kevin");//Getting voice
+		System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
+		freeVM = VoiceManager.getInstance();
+		Voice[] voices = freeVM.getVoices(); //get all the available voices from the voice manager
+		voice = voices[1]; //chose this one because we liked it better
+		voice.allocate();
 	}
 	
-	public void play(String str)
+	public void play(String str, float vol, int pitch, int rate)
 	{
-		voice.speak(str);//Calling speak() method
+		voice.allocate();
+		voice.setVolume(vol);
+		voice.setPitch(pitch);
+		voice.setRate(rate);
+		voice.speak(str);
 	}
 	
-	public void setVolume(int x)
+	public void pause() throws InterruptedException
 	{
-		voice.setVolume(x);//Setting the volume of the voice
+		voice.deallocate();
 	}
 	
-	public void setPitch(int x)
+	public Voice getVol() 
 	{
-		voice.setPitch(x);//Setting the Pitch of the voice
-	}
-	
-	public void setRate(int x)
-	{
-		voice.setRate(x);//Setting the rate of the voice
+		return voice;
 	}
 }

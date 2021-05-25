@@ -1,11 +1,8 @@
 package input;
 import java.util.ArrayList;
-import java.util.List;
-import java.lang.*;
 
 public class ReaderRot13Decorator implements DocumentDecoder
 {
-	//myTxt=<Mona, joanis, ioanna, ..>
 	private ArrayList<String> myText;
 	
 	public ReaderRot13Decorator(ArrayList<String> myText)
@@ -39,7 +36,6 @@ public class ReaderRot13Decorator implements DocumentDecoder
 					tempString[j] -= 13;
 					
 				}
-				//StdOut.print(c);
 			}
 			String decodedString = new String(tempString);
 			this.myText.set(k, decodedString);
