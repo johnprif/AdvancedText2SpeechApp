@@ -3,34 +3,30 @@ package input;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
 public class WordReader implements DocumentReader
 {
-	public WordReader()
+	private String fileNameWithPath; 
+	public WordReader(String fileNameWithPath)
 	{
-		
+		this.fileNameWithPath=fileNameWithPath;
 	}
 	
-	public ArrayList<String> read()
+	public ArrayList<String> read() // reads a word file and  and puts its content in an ArrayList
 	{
 		XWPFDocument document = null;
 		FileInputStream fileInputStream = null;
 		XWPFWordExtractor extractor=null;
 		ArrayList<String> list=new ArrayList<String>();
 		try 
-		{			//GET THE PATH AUTOMA...
-			File fileToBeRead = new File("C:\\Users\\johnprif\\Desktop\\data2.docx");
+		{
+			File fileToBeRead = new File(fileNameWithPath);
 			fileInputStream = new FileInputStream(fileToBeRead);
 			document = new XWPFDocument(fileInputStream);
 			extractor = new XWPFWordExtractor(document); 
-			System.out.println("The Contents of the Word File are ::");
-			System.out.println("--------------------------------------");
-			System.out.println(extractor.getText());
-			list.add(extractor.getText());
+			list.add(extractor.getText()+"\n");
 		} catch (Exception e) 
 		{
 			System.out.println("We had an error while reading the Word Doc");
