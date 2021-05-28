@@ -3,15 +3,16 @@ package input;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
 public class WordReader implements DocumentReader
 {
-	private String fileNameWithPath; 
-	public WordReader(String fileNameWithPath)
+	public WordReader()
 	{
-		this.fileNameWithPath=fileNameWithPath;
+		
 	}
 	
 	public ArrayList<String> read()
@@ -21,11 +22,14 @@ public class WordReader implements DocumentReader
 		XWPFWordExtractor extractor=null;
 		ArrayList<String> list=new ArrayList<String>();
 		try 
-		{
-			File fileToBeRead = new File(fileNameWithPath);
+		{			//GET THE PATH AUTOMA...
+			File fileToBeRead = new File("C:\\Users\\johnprif\\Desktop\\data2.docx");
 			fileInputStream = new FileInputStream(fileToBeRead);
 			document = new XWPFDocument(fileInputStream);
 			extractor = new XWPFWordExtractor(document); 
+			System.out.println("The Contents of the Word File are ::");
+			System.out.println("--------------------------------------");
+			System.out.println(extractor.getText());
 			list.add(extractor.getText());
 		} catch (Exception e) 
 		{

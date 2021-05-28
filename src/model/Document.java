@@ -1,54 +1,57 @@
 package model;
+
 import java.util.ArrayList;
+
+import input.DocumentReader;
 import input.DocumentReaderFactory;
 
 public class Document 
 {
 	private ArrayList<String> contents;
 	private TTSFacade audioManager;
+	private DocumentReader documentReader;
 	private DocumentReaderFactory docReaderFactory;
-	private String fileNameWithPath;
+	private DocumentWriter documentWriter;
+	private DocumentWriterFactory docWriterFactory;	
 	
 	public Document()
 	{
-		audioManager = new TTSFacade();
+		contents=new ArrayList<String>();
 	}
 	
-	public void setFileNameWithPath(String fileNameWithPath)
+	public void setAudioManager(TTSFacade ttsssssss)
 	{
-		this.fileNameWithPath = fileNameWithPath;
-	}
-	
-	public ArrayList<String> getContent()
-	{
-		contents = new ArrayList<String>(docReaderFactory.getList());
-		return contents;
-	}
-	
-	public void setAudioManager(TTSFacade ttss)
-	{
-		audioManager = ttss;
+		
 	}
 	
 	public void setDocReaderFactory(DocumentReaderFactory doc)
 	{
-		docReaderFactory = doc;
+		
 	}
-
-	public void open(String fileName)
+	
+	public void setDocWriterFactory(DocumentWriterFactory doc)
 	{
 		
-		if(fileName.contains("docx"))
-		{
-			docReaderFactory = new DocumentReaderFactory("docx", fileNameWithPath);
-		}else if(fileName.contains("xlsx"))
-		{
-			docReaderFactory = new DocumentReaderFactory("xlsx", fileNameWithPath);
-		}
-		else //other files include .doc and .xls
-		{
-			docReaderFactory = new DocumentReaderFactory("other", fileNameWithPath);
-		}
+	}
+	
+	public void open(String a, String b, String c)
+	{
+		
+	}
+	
+	public void playContents()
+	{
+		
+	}
+	
+	public void playLine(int x)
+	{
+		
+	}
+	
+	public void save(String a, String b, String c)
+	{
+		
 	}
 }
 

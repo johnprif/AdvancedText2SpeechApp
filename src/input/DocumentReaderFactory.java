@@ -4,34 +4,25 @@ import java.util.ArrayList;
 
 public class DocumentReaderFactory
 {
+	private ReaderAtbashDecorator readerAtbashDecorator;
+	private ReaderRot13Decorator readerRot13Decorator;
 	private WordReader wordDoc;
 	private ExcelReader excelDoc;
+	private String decodingMethod;
 	public ArrayList<String> temp;
 	
-	public DocumentReaderFactory(String type, String fileNameWithPath)
+	
+	public DocumentReaderFactory(DocumentReader lol)
 	{
-		if(type.equals("xlsx"))
-		{
-			excelDoc = new ExcelReader(fileNameWithPath);
-			temp = excelDoc.read();
-		}else if(type.equals("docx"))
-		{
-			wordDoc = new WordReader(fileNameWithPath);
-			temp = wordDoc.read();
-		}
-		else if(type.equals("other"))
-		{
-			OtherFileReader otherFile = new OtherFileReader(fileNameWithPath);
-			temp = otherFile.read(); 
-		}
-		else
-		{
-			System.exit(-1);
-		}
+//		wordDoc = new WordReader();
+//		excelDoc = new ExcelReader();
+		readerAtbashDecorator = new ReaderAtbashDecorator(lol.read());
+		readerRot13Decorator = new ReaderRot13Decorator(lol.read());
 	}
 	
-	public ArrayList<String> getList()
+	//default
+	public DocumentReader createReader(String a, String b, String c)
 	{
-		return temp;
+		return null;
 	}
 }
