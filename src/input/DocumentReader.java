@@ -1,9 +1,8 @@
 package input;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public interface DocumentReader 
+public interface DocumentReader // interface for the file opening classes
 {
 	public ArrayList<String> read();
 }

@@ -1,6 +1,5 @@
 package input;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ReaderAtbashDecorator implements DocumentDecoder
 {
@@ -11,7 +10,7 @@ public class ReaderAtbashDecorator implements DocumentDecoder
 		this.myText = myText;
 	}
 	
-	public ArrayList<String> decoder()
+	public ArrayList<String> decoder() // method that decodes a string into Rot13 and returns it
 	{
 		int k=0;
 		char[] tempString=null;
@@ -22,11 +21,11 @@ public class ReaderAtbashDecorator implements DocumentDecoder
 			{	
 				if(tempString[j] >= 'a' && tempString[j] <= 'z')
 				{
-					tempString[j]=(char)((155+64 - tempString[j])); //based on ascii and wiki
+					tempString[j]=(char)((155+64 - tempString[j])); //based on ascii and wiki 219
 		        }  
 		        else if ((tempString[j]-'A'>=0) && ( 0<= 'Z'-tempString[j]))
 		        {	
-		        	tempString[j]=(char)((5+ tempString[j]));//based on wikipedia and ascii
+		        	tempString[j]=(char)((5+ tempString[j])); //based on wikipedia and ascii
 		        }
 		    }
 			String decodedString = new String(tempString);
