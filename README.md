@@ -8,3 +8,8 @@ graphical user interface, a back-end that enables the text editing process and t
 text to speech, which will be based on external text to speech libraries.**
 
 **About the code**
+- IDE: Eclipse IDE 2022-06
+- back-end: Java 11.0.16.1
+- front-end: Java Swing
+- Microsoft Excel: 
+- Microsoft Word: 
