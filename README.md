@@ -6,3 +6,5 @@ documents may be encoded with different encoding mechanisms. The target users of
 may be people who have reading problems or visually impaired people. The application consists of a
 graphical user interface, a back-end that enables the text editing process and the part that transforms
 text to speech, which will be based on external text to speech libraries.**
+
+**About the code**
