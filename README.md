@@ -2,6 +2,8 @@
 
 > A Java Swing desktop application that loads, edits and converts documents (Word .docx, Excel .xlsx, etc.) into spoken audio using the FreeTTS library. It employs Factory, Decorator and Facade design patterns to structure document parsing, UI logic and TTS conversion, and is packaged as a Windows .exe.
 
+[Download Latest Release (Windows Executable)](https://github.com/johnprif/AdvancedText2SpeechApp/releases/tag/Stable)
+
 ## 📋 Table of Contents
 1. [Overview](#overview)  
 2. [Features](#features)  
