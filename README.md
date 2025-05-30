@@ -91,8 +91,8 @@ Contributions are welcome:
 This project is released under the **MIT License**. See [LICENSE](https://github.com/johnprif/AdvancedText2SpeechApp/blob/main/LICENSE) for full text.
 
 ## Contact
-- GitHub: [johnprif](https://github.com/johnprif)
-- Email: [giannispriftis37@gmail.com](mailto:giannispriftis37@gmail.com)
+- GitHub: [joanisprifti](https://github.com/joanisprifti)
+- Email: [joanisprifti@gmail.com](mailto:joanisprifti@gmail.com)
 - Phone: [+306940020178](tel:+306940020178)
 
 ---
